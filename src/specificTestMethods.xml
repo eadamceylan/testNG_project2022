@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<!--  bir class' da tum method lari calisacaksa bunun icin direk class secmek yeterlidir method secmemizin
+temel amaci class icerisinde sadece belirlenen methodlarin calismasi veya belirlenen methodlarin disindaki
+tum methodlarin calismasidir
+
+      Eger calisacak spesifik methodlari belirlemek istersek inclusive calsmayacak methodlari belirtmek
+istersek exclusive keywordlari kullaniriz-->
+<suite name="expected methods" verbose="1">
+    <test name="method">
+        <classes>
+            <class name="techproed.tests.excelautomation.Day17_ExcelLogin">
+                <methods>
+                    <exclude name="tearDown"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

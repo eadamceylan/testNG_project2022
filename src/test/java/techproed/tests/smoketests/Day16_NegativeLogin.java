@@ -14,7 +14,7 @@ public class Day16_NegativeLogin {
     HomePage homePage;
     LoginPage loginPage;
     Faker faker;
-    @Test
+    @Test(groups = "group1")
     public void negativeLogin(){
         Driver.getDriver().get(ConfigReader.getProperty("app_url"));
         homePage = new HomePage();

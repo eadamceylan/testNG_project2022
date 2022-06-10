@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<!-- Bir xml dosyasi ile projemizden istedigmiz testleri, package'leri
+     classlari veya test methodlarini calistirabilirsiniz
+     bunun icin yapmaniz gereken; suite' den baslayip
+     test hyearasisine uygun olarak calisacak tum testleri
+     xml formatinda yazmamizdir-->
+
+<suite name="istenen classlari calistirma">
+    <test name="classlar">
+        <classes>
+            <class name="techproed.tests.Day17_JSUtilsTest"></class>
+            <class name="techproed.Day15_Annotations"></class>
+        </classes>
+    </test>
+</suite>

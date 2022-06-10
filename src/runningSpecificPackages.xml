@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="specific package run">
+    <test name="paket">
+        <packages>
+            <package name="techproed.tests.smoketests"></package>
+            
+        </packages>
+    </test>
+    <test name="different test classes">
+        <classes>
+            <class name="techproed.Day15_Annotations"></class>
+        </classes>
+    </test>
+</suite>

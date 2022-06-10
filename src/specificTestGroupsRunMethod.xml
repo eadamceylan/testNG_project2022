@@ -1,0 +1,29 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<!-- xml dosyalar callistiracagimiz suite, test veya secenekleri bir goreve gore gruplandirma icin de kullanilabilir
+
+     bu durumda calisilacak tum test method larini ve ya class lari
+     tek tek xml dosyasina tanimlamak yerine
+     framework umuza istedigimiz test method larini
+     istedigimiz gruplara dahil edebiliriz
+
+     bunu yapanilmek icin once test methodlarimizi istedigimiz gruplara dahil eder sonra xml dosyasinda
+        1- hangi grular calisacak /calismayacak
+        2- bu gruplar hangi pack. altinda aranacak
+
+        exclude "group1" dersek bu grup disindaki disindaki butun gruplari calistirir.
+        hem exclude hemde include gruplari run icinde yazilabilir.
+
+     -->
+<suite name="specific groups">
+<test name="specific gruops">
+    <groups>
+        <run>
+            <include name="group1">
+            </include>
+        </run>
+    </groups>
+    <packages>
+        <package name="techproed.tests.smoketests"></package>
+    </packages>
+</test>
+</suite>

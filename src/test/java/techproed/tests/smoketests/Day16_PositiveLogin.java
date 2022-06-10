@@ -13,7 +13,7 @@ public class Day16_PositiveLogin {
     LoginPage loginPage;
     DefaultPage defaultPage;
 
-    @Test
+    @Test (groups = "group1")
     public void adminLogin(){
         Driver.getDriver().get(ConfigReader.getProperty("app_url"));
         homePage = new HomePage();
