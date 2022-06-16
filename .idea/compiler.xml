@@ -6,9 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="my-testNG-project" />
         <module name="testNG-my-selenium-project" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="testNG-my-selenium-project" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

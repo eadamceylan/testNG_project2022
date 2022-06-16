@@ -1,4 +1,5 @@
 package techproed.tests.excelautomation;
+
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
@@ -9,15 +10,17 @@ import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 import techproed.utilities.ExcelUtil;
 import techproed.utilities.ReusableMethods;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+
 public class Day17_ExcelLogin {
     HomePage homePage;
     LoginPage loginPage;
     DefaultPage defaultPage;
     ExcelUtil excelUtil;
-    //    We will store excel data in this list
+//    We will store excel data in this list
     List<Map<String, String>> testData;
     public void login(){
 //        going to the home page url
@@ -26,7 +29,9 @@ public class Day17_ExcelLogin {
         homePage = new HomePage();
         loginPage = new LoginPage();
         defaultPage = new DefaultPage();
+
         try{
+//            THIS RUNS ONLY ON  THE FIRST LOGIN
 //            clinking on the homelogin button
 //            homepage login is only visible at the first login
 //            We should put this in try catch block, to catch the exception after 1st login
@@ -35,7 +40,9 @@ public class Day17_ExcelLogin {
         }catch (Exception e){
 //            e.printStackTrace();
         }
+
         try{
+//            THIS IS GOING TO RUN AFTER THE FIRST LOGIN
 //            After the 1st login, I need to log out
 //            In the first login logout is not then
 //            So I need to use try catch to catch the exception in the 1st login
@@ -45,8 +52,10 @@ public class Day17_ExcelLogin {
             defaultPage.OK.click();
             homePage.homeLoginButton.click();
         }catch (Exception e){
+
         }
     }
+
     @Test
     public void customerLogin() throws IOException {
 //        path of the excel sheet
@@ -72,9 +81,11 @@ public class Day17_ExcelLogin {
             Assert.assertTrue(defaultPage.userID.isDisplayed());
 //            Take a screenshot
             ReusableMethods.getScreenshot("ManagerLoginTest");
+
         }
 //
     }
+
     @AfterMethod
     public void tearDown(){
         Driver.closeDriver();

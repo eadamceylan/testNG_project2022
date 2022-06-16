@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Blue Rental Smoke Test Suite" verbose="1" >
+    <test name="Smoke Test">
+        <packages>
+            <package name="techproed.tests.smoketests"/>
+            <package name="techproed.tests.excelautomation"/>
+        </packages>
+    </test>
+</suite>
+<!--Make sure to save file after change
+suite>tests>groups>packages>classes>Methods
+verbose: the amount of info we see on the console
+-->

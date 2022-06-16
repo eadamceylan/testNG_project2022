@@ -4,43 +4,33 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class Day18_DataProvider1 {
-/*DATA PROVIDER
-* Marks a method as supplying data for a test method.
-* The annotated method must return an Object[][] where
-* each Object[] can be assigned the parameter list of the test method.
-* The @Test method that wants to receive data from this DataProvider
-* needs to use a dataProvider name equals to the name of this annotation.*/
+/*
+* DATA PROVIDER: is used to get list of data in TestNG
+* 1. create a method
+* 2. use @DataProvider annotation
+* 2. add data
+*
+* How to pass the data from a method to test method with data provider?
+* -Use dataProvider in the Test method and set uit to equal to method name
+*
+* We can give alternative name using name ="alternative name"
+*
+* */
 
-    /*
-    * Data provider it is a testNG annotation. it is used to get the list of data
-    * 1) Create a method
-    * 2) use @DataProvider method
-    * 3) Add the data
-    *
-    *
-    * We can add alternative name to DataProvider using (name = "alternative name")
-    *
-    * How to pass from a method to test method with Data Provider?
-    * ANS: Add dataProvider = "name" ) near the @test annotation
-    * */
-    @DataProvider
-    public Object [][] dataProviderMethod(){
+    @DataProvider(name = "customer-login-data")
+    public Object[][] dataProviderMethod(){
 
-        Object [][] costumerCredential = {
+        Object[][] customerCredentials ={
                 {"customer@bluerentalcars.com","12345"},
                 {"customer1@bluerentalcars.com","12346"},
                 {"customer2@bluerentalcars.com","12347"},
                 {"customer3@bluerentalcars.com","12348"}
-
         };
-        return costumerCredential;
+        return customerCredentials;
     }
 
-    @Test(dataProvider = "dataProviderMethod")
-    public void costumerLoginInfo(String username, String password) {
-        System.out.println("Username " +username +"| password" +password);
-
-
-
+    @Test(dataProvider = "customer-login-data",groups = "smoke-group-1")
+    public void customerLoginInfo(String username, String password){
+        System.out.println("Username : "+username+" | Password : "+password);
     }
 }

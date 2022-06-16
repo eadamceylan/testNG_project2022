@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Smoke Group 1">
+    <test name="Smoke test group 1">
+<!--        Running specific test groups using testng xml groups-->
+        <groups>
+            <run>
+<!--                include -> run the tags-->
+<!--                exclude -> skip the tags-->
+                <include name="smoke-group-1"/>
+            </run>
+        </groups>
+
+        <packages>
+<!--            look for the groups inside the entire package-->
+            <package name="techproed.*"></package>
+        </packages>
+    </test>
+</suite>
+

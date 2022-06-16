@@ -13,7 +13,7 @@ public class Day16_PositiveLogin {
     LoginPage loginPage;
     DefaultPage defaultPage;
 
-    @Test (groups = "group1")
+    @Test
     public void adminLogin(){
         Driver.getDriver().get(ConfigReader.getProperty("app_url"));
         homePage = new HomePage();
@@ -27,7 +27,7 @@ public class Day16_PositiveLogin {
         Assert.assertTrue(defaultPage.userID.isDisplayed());
         Driver.closeDriver();
     }
-    @Test
+    @Test(groups = "smoke-group-1")
     public void customerLogin(){
         Driver.getDriver().get(ConfigReader.getProperty("app_url"));
         homePage = new HomePage();

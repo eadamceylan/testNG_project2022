@@ -1,19 +1,24 @@
 package techproed.utilities;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+
 public class JSUtils {
+
     //This method will takes two parameter: WebElement, and WebDriver
     //When you pass the element, JS will click on that element
     public static void clickElementByJS(WebElement element) {
         JavascriptExecutor jsexecutor = ((JavascriptExecutor) Driver.getDriver());
         jsexecutor.executeScript("arguments[0].click();", element);
     }
+
     //to get the page title with JS
     public static String getTitleByJS() {
         JavascriptExecutor jsexecutor = ((JavascriptExecutor) Driver.getDriver());
         String title = jsexecutor.executeScript("return document.title;").toString();
         return title;
     }
+
     //Scrolling all the way down
     public static void scrollDownByJS() {
         JavascriptExecutor jsexecutor = ((JavascriptExecutor) Driver.getDriver());
@@ -29,6 +34,7 @@ public class JSUtils {
         JavascriptExecutor jsexecutor = ((JavascriptExecutor) Driver.getDriver());
         jsexecutor.executeScript("arguments[0].scrollIntoView(true);", element);
     }
+
     public static void changeColor(String color, WebElement element) {
         JavascriptExecutor javascriptExecutor = ((JavascriptExecutor) Driver.getDriver());
         javascriptExecutor.executeScript("arguments[0].style.backgroundColor = '" + color + "'", element);
@@ -52,6 +58,7 @@ public class JSUtils {
         javascriptExecutor.executeScript("alert('" + message + "')");
         Thread.sleep(3000);
     }
+
     /*
      * executes the given JavaScript command on given web element
      */
@@ -66,6 +73,8 @@ public class JSUtils {
         JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
         jse.executeScript(command);
     }
+
+
     //    Set the value of an input using js executor. Params: WebElement element, String text
 //    This method changes the value attribute of an element.
 //    It changes the input text
